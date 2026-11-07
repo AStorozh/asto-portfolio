@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luma — вся жизнь в одном приложении, и ИИ, который ведёт её за тебя</title>
+    <meta
+      name="description"
+      content="Luma: привычки, задачи, проекты, деньги, еда и тренировки в одном приложении для Mac и Android. ИИ-агент записывает и считает всё по обычным словам."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link rel="stylesheet" href="styles.css?v=63" />
+    <link rel="stylesheet" href="mock.css?v=60" />
+    <link rel="icon" href="assets/favicon.png" />
+  </head>
+  <body>
+    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro-flood"></div>
+      <img class="intro-bulb" src="assets/logo.png" alt="" />
+    </div>
+
+    <header class="topbar">
+      <a href="#top" class="brand"><img class="logo" src="assets/logo.png" alt="" /><span>Luma</span></a>
+      <nav class="topnav">
+        <a href="#download" data-sec="download" data-icon="download"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.download"></span
+        ></a>
+        <a href="#how" data-sec="how" data-icon="play"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.how"></span
+        ></a>
+        <a href="#features" data-sec="features" data-icon="layout-grid"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.features"></span
+        ></a>
+        <a href="#phone" data-sec="phone" data-icon="smartphone"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.phone"></span
+        ></a>
+        <a href="#agent" data-sec="agent" data-icon="sparkles"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.agent"></span
+        ></a>
+        <a href="#engineering" data-sec="engineering" data-icon="settings"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.eng"></span
+        ></a>
+        <a href="#author" data-sec="author" data-icon="book-open"
+          ><span class="nav-ic"></span><span class="nav-t" data-i18n="nav.author"></span
+        ></a>
+      </nav>
+      <a class="site-btn" href="#" data-author-site
+        ><span data-i18n="nav.site"></span
+        ><svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" /></svg
+      ></a>
+      <button class="lang" type="button" id="lang" aria-label="Language">EN</button>
+    </header>
+
+    <main id="top">
+      <!-- 1. HERO: what it is, in one sentence, with the real app -->
+      <section class="hero t-dark">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-text reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+          <h1 data-i18n="hero.title"></h1>
+          <p class="lead" data-i18n="hero.lead"></p>
+          <div class="hero-buttons">
+            <a class="btn btn-hl" href="#engineering" data-i18n="hero.more"></a>
+            <a class="btn btn-ghost" href="#download" data-i18n="hero.download"></a>
+          </div>
+          <ul class="badges">
+            <li data-i18n="hero.b1"></li>
+            <li data-i18n="hero.b2"></li>
+            <li data-i18n="hero.b3"></li>
+            <li data-i18n="hero.b4"></li>
+          </ul>
+        </div>
+
+        <div class="hero-stage reveal">
+          <div class="orbit" aria-hidden="true">
+            <div class="orbit-glow"></div>
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring inner"></div>
+            <div class="orbit-spin" id="orbitSpin"></div>
+            <div class="orbit-core">
+              <div class="orbit-input">
+                <span class="spark">✦</span><span id="heroTyped"></span><span class="caret"></span>
+              </div>
+              <div class="orbit-cards" id="orbitCards"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. DOWNLOAD: get it right away -->
+      <section id="download" class="download t-light">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="d.kicker"></p>
+          <h2 data-i18n="d.title"></h2>
+          <p data-i18n="d.lead"></p>
+        </div>
+        <div class="dl-cards">
+          <div class="dl-card reveal">
+            <span class="dl-ic" data-ic="monitor"></span>
+            <div class="dl-t"><b>macOS</b><span data-i18n="d.macReq"></span></div>
+            <a class="dl-btn" data-download="mac" download
+              ><span class="dl-bi" data-ic="download"></span><span data-i18n="d.macBtn"></span
+            ></a>
+            <small class="dl-meta" data-meta="mac"></small>
+          </div>
+          <div class="dl-card reveal">
+            <span class="dl-ic" data-ic="smartphone"></span>
+            <div class="dl-t"><b>Android</b><span data-i18n="d.androidReq"></span></div>
+            <a class="dl-btn" data-download="android" download
+              ><span class="dl-bi" data-ic="download"></span><span data-i18n="d.androidBtn"></span
+            ></a>
+            <small class="dl-meta" data-meta="android"></small>
+          </div>
+        </div>
+        <ol class="dl-steps reveal">
+          <li>
+            <span>1</span>
+            <div>
+              <b data-i18n="d.s1t"></b>
+              <p data-i18n="d.s1"></p>
+            </div>
+          </li>
+          <li>
+            <span>2</span>
+            <div>
+              <b data-i18n="d.s2t"></b>
+              <p data-i18n="d.s2"></p>
+            </div>
+          </li>
+          <li>
+            <span>3</span>
+            <div>
+              <b data-i18n="d.s3t"></b>
+              <p data-i18n="d.s3"></p>
+            </div>
+          </li>
+        </ol>
+        <p class="dl-note reveal" data-i18n="d.note"></p>
+      </section>
+
+      <!-- 3. HOW: try it yourself -->
+      <section id="how" class="write t-light">
+        <div class="tw">
+          <div class="tw-left">
+            <div class="section-head reveal">
+              <p class="kicker" data-i18n="w.kicker"></p>
+              <h2 data-i18n="w.title"></h2>
+              <p data-i18n="w.lead"></p>
+            </div>
+            <p class="tw-try reveal" data-i18n="w.try"></p>
+            <div class="tw-ex reveal" id="pgExamples"></div>
+          </div>
+          <div class="tw-machine reveal">
+            <div class="tw-stage">
+              <div class="tw-sh"><span>1</span><b data-i18n="how.s1t"></b></div>
+              <div class="tw-input">
+                <span class="spark">✦</span><input id="pgInput" autocomplete="off" spellcheck="false" />
+              </div>
+            </div>
+            <div class="tw-link"><i></i></div>
+            <div class="tw-stage">
+              <div class="tw-sh"><span>2</span><b data-i18n="how.s2t"></b></div>
+              <div class="tw-parse" id="pgParse"></div>
+            </div>
+            <div class="tw-link"><i></i></div>
+            <div class="tw-stage">
+              <div class="tw-sh"><span>3</span><b data-i18n="how.s3t"></b></div>
+              <div id="pgResult"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. FEATURES: a tab per area, the real screen beside it -->
+      <section id="features" class="features t-dark">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="f.kicker"></p>
+          <h2 data-i18n="f.title"></h2>
+          <p data-i18n="f.lead"></p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-tabs" id="featTabs" role="tablist"></div>
+          <div class="feat-view">
+            <div class="app-frame"><div id="featMac"></div></div>
+            <div class="feat-text">
+              <h3 id="featTitle"></h3>
+              <p id="featLead"></p>
+              <p class="feat-say"><span data-i18n="f.say"></span><b id="featSay"></b></p>
+              <ul id="featList"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EVERYWHERE: the phone, and sync across devices -->
+      <section id="phone" class="phone-sec t-light">
+        <div class="phone-row">
+          <div class="phone-copy">
+            <div class="section-head reveal">
+              <p class="kicker" data-i18n="p.kicker"></p>
+              <h2 data-i18n="p.title"></h2>
+              <p data-i18n="p.lead"></p>
+            </div>
+            <ol class="phone-steps" id="phoneSteps">
+              <li data-step="0"><b data-i18n="p.s1t"></b><span data-i18n="p.s1"></span></li>
+              <li data-step="1"><b data-i18n="p.s2t"></b><span data-i18n="p.s2"></span></li>
+              <li data-step="2"><b data-i18n="p.s3t"></b><span data-i18n="p.s3"></span></li>
+              <li data-step="3"><b data-i18n="p.s4t"></b><span data-i18n="p.s4"></span></li>
+            </ol>
+          </div>
+          <div class="phone-stage">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <div class="phone-frame big"><div id="phoneTour"></div></div>
+          </div>
+        </div>
+        <div class="sync-block">
+          <div class="section-head sub reveal">
+            <p class="kicker" data-i18n="s.kicker"></p>
+            <h2 data-i18n="s.title"></h2>
+            <p data-i18n="s.lead"></p>
+          </div>
+          <div class="sync-stage" id="sync">
+            <div class="phone-frame"><div id="syncPhone"></div></div>
+            <svg class="wire" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+              <path id="wire" d="M0,100 C120,20 280,180 400,100" />
+              <circle r="7" id="pulse" />
+            </svg>
+            <div class="sync-right">
+              <div class="widget">
+                <div class="widget-h" data-i18n="s.widget"></div>
+                <ul class="habits dark-list" id="widgetHabits"></ul>
+              </div>
+              <div class="mac small">
+                <div class="mac-bar"><i></i><i></i><i></i></div>
+                <div class="mac-body pad"><div class="grid-mini" id="macGrid"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. AGENT -->
+      <section id="agent" class="agent t-dark">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="ag.kicker"></p>
+          <h2 data-i18n="ag.title"></h2>
+          <p data-i18n="ag.lead"></p>
+        </div>
+        <div class="agent-stage v2">
+          <div class="ag-chat">
+            <div class="ag-head">
+              <span class="ag-av"><img src="assets/logo.png" alt="" /></span>
+              <span><b>ag_luma</b><small data-i18n="ag.status"></small></span>
+              <span class="ag-model">Claude Haiku 5.5</span>
+            </div>
+            <div class="ag-body" id="chatBody"></div>
+            <div class="ag-composer" id="agComposer">
+              <span class="ag-typed" id="agTyped"></span>
+              <span class="ag-mic" id="agMic"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 19v3" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <rect x="9" y="2" width="6" height="13" rx="3" /></svg
+              ></span>
+            </div>
+          </div>
+          <div class="ag-side">
+            <div class="ag-result">
+              <div class="ag-label"><span class="ag-dot"></span><span data-i18n="ag.result"></span></div>
+              <div class="ag-stage" id="agStage"></div>
+            </div>
+            <div class="ag-log">
+              <div class="ag-label"><span data-i18n="ag.log"></span><small data-i18n="ag.logNote"></small></div>
+              <ul id="agentLog"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="promises">
+          <div class="promise reveal">
+            <span class="pr-ic" data-ic="mic"></span><b data-i18n="ag.p1t"></b><span data-i18n="ag.p1"></span>
+          </div>
+          <div class="promise reveal">
+            <span class="pr-ic" data-ic="check-check"></span><b data-i18n="ag.p2t"></b><span data-i18n="ag.p2"></span>
+          </div>
+          <div class="promise reveal">
+            <span class="pr-ic" data-ic="sparkles"></span><b data-i18n="ag.p3t"></b><span data-i18n="ag.p3"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ENGINEERING: counters, then tabs for the technical reader -->
+      <section id="engineering" class="engineering t-light">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="e.kicker"></p>
+          <h2 data-i18n="e.title"></h2>
+          <p data-i18n="e.lead"></p>
+          <a class="gh-btn" href="#" hidden data-link="github" target="_blank" rel="noreferrer"
+            ><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+              /></svg
+            ><span data-i18n="e.github"></span
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" /></svg
+          ></a>
+        </div>
+        <div class="spec reveal" id="engSpec"></div>
+        <div class="doc">
+          <div class="doc-body" id="engDoc"></div>
+        </div>
+      </section>
+
+      <!-- 8. AUTHOR -->
+      <section id="author" class="author t-dark">
+        <div class="au-top">
+          <div class="au-logo reveal"><img id="astoLogo" src="assets/asto-logo.svg" alt="asto" /></div>
+          <div class="au-intro reveal">
+            <p class="kicker" data-i18n="a.kicker"></p>
+            <h2 class="au-name" data-name></h2>
+            <p class="au-role">AI Automation Engineer &amp; AI Agent Engineer</p>
+            <p class="au-about" data-i18n="a.about"></p>
+            <a class="site-btn au-site" href="#" data-author-site
+              ><span data-i18n="a.site"></span
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="icons.js?v=60"></script>
+    <script src="mock.js?v=62"></script>
+    <script src="app.js?v=63"></script>
+    <script src="/analytics-lite.js?v=1" defer></script>
+  </body>
+</html>
